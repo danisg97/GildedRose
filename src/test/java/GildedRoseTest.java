@@ -1,4 +1,6 @@
 import codely.kata.Item;
+import codely.service.ItemProcessor;
+import codely.service.ItemProcessorImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,10 +9,11 @@ class GildedRoseTest {
 
     @Test
     void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
-        GildedRose app = new GildedRose(items);
+        ItemProcessor itemProcessor = new ItemProcessorImpl();
+        Item[] items = new Item[] { new Item("Aged Brie", 0, 0) };
+        GildedRose app = new GildedRose(items, itemProcessor);
         app.updateQuality();
-        assertEquals("fixme", app.items[0].name);
+        assertEquals("Aged Brie", app.items[0].name);
     }
 
 }

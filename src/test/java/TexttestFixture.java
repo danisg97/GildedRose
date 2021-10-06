@@ -1,8 +1,12 @@
 import codely.kata.Item;
+import codely.service.ItemProcessor;
+import codely.service.ItemProcessorImpl;
 
 public class TexttestFixture {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
+
+        ItemProcessor itemProcessor = new ItemProcessorImpl();
 
         Item[] items = new Item[]{
                 new Item("+5 Dexterity Vest", 10, 20), //
@@ -16,7 +20,7 @@ public class TexttestFixture {
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6)};
 
-        GildedRose app = new GildedRose(items);
+        GildedRose app = new GildedRose(items, itemProcessor);
 
         int days = 2;
         if (args.length > 0) {
