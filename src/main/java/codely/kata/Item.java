@@ -1,4 +1,4 @@
-package com.gildedrose;
+package codely.kata;
 
 public class Item {
 
