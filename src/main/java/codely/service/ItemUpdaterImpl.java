@@ -2,7 +2,7 @@ package codely.service;
 
 import codely.kata.Item;
 
-public class ItemProcessorImpl implements ItemProcessor {
+public class ItemUpdaterImpl implements ItemUpdater {
 
     private static final int MAX_QUALITY = 50;
     private static final int MIN_QUALITY = 0;
@@ -14,7 +14,7 @@ public class ItemProcessorImpl implements ItemProcessor {
     private static final String CONJURED = "CONJURED";
 
     @Override
-    public void processAgedBrie(Item item) {
+    public void updateAgedBrie(Item item) {
         if(item.quality <= MAX_QUALITY) {
             increaseAgedBrieQuality(item);
         }
@@ -22,12 +22,12 @@ public class ItemProcessorImpl implements ItemProcessor {
     }
 
     @Override
-    public void processSulfuras(Item item) {
+    public void updateSulfuras(Item item) {
         decreaseSellIn(item);
     }
 
     @Override
-    public void processCommonObject(Item item) {
+    public void updateCommonObject(Item item) {
         if(item.quality >= MIN_QUALITY) {
             decreaseQuality(item);
         }

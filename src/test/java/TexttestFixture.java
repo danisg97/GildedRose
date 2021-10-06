@@ -1,12 +1,12 @@
 import codely.kata.Item;
-import codely.service.ItemProcessor;
-import codely.service.ItemProcessorImpl;
+import codely.service.ItemUpdater;
+import codely.service.ItemUpdaterImpl;
 
 public class TexttestFixture {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
 
-        ItemProcessor itemProcessor = new ItemProcessorImpl();
+        ItemUpdater itemProcessor = new ItemUpdaterImpl();
 
         Item[] items = new Item[]{
                 new Item("+5 Dexterity Vest", 10, 20), //

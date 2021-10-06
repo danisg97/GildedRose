@@ -1,5 +1,5 @@
 import codely.kata.Item;
-import codely.service.ItemProcessor;
+import codely.service.ItemUpdater;
 
 class GildedRose {
 
@@ -7,21 +7,21 @@ class GildedRose {
     private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
 
     Item[] items;
-    ItemProcessor itemProcessor;
+    ItemUpdater itemUpdater;
 
-    public GildedRose(Item[] items, ItemProcessor itemProcessor) {
+    public GildedRose(Item[] items, ItemUpdater itemProcessor) {
         this.items = items;
-        this.itemProcessor = itemProcessor;
+        this.itemUpdater = itemProcessor;
     }
 
     public void updateQuality() {
         for(final Item item : items) {
             if(AGED_BRIE.equals(item.name)) {
-                itemProcessor.processAgedBrie(item);
+                itemUpdater.updateAgedBrie(item);
             } else if(SULFURAS.equals(item.name)) {
-                itemProcessor.processSulfuras(item);
+                itemUpdater.updateSulfuras(item);
             } else {
-                itemProcessor.processCommonObject(item);
+                itemUpdater.updateCommonObject(item);
             }
         }
     }
